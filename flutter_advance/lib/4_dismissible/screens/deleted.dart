@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/4_dismissible/widget/background_for_dis.dart';
 
 class Deleted extends StatefulWidget {
   final List<String> deleted;
   final List<String> emails;
-  const Deleted({super.key, required this.deleted, required this.emails});
+  const Deleted({
+    super.key,
+    required this.deleted,
+    required this.emails,
+  });
 
   @override
   State<Deleted> createState() => _DeletedState();
@@ -22,6 +27,13 @@ class _DeletedState extends State<Deleted> {
           return Card(
             margin: const EdgeInsets.all(15),
             child: Dismissible(
+              background: const BackgroundForDis(
+                color: Colors.green,
+                icon: Icons.undo_outlined,
+                isLeft: true,
+              ),
+              secondaryBackground: const BackgroundForDis(
+                  color: Colors.green, icon: Icons.undo_outlined),
               key: Key(widget.emails[index]),
               direction: DismissDirection.horizontal,
               onDismissed: (direction) {
@@ -30,6 +42,7 @@ class _DeletedState extends State<Deleted> {
                   widget.emails.insert(index, deletedString);
                   widget.deleted.remove(deletedString);
                 });
+                Navigator.pop(context, true);
               },
               child: ListTile(
                 leading: const CircleAvatar(

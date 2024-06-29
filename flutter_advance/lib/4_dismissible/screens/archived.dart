@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/4_dismissible/widget/background_for_dis.dart';
 
 class Archived extends StatefulWidget {
   final List<String> archived;
-  const Archived({super.key, required this.archived});
+  final List<String> emails;
+  const Archived({super.key, required this.archived, required this.emails});
 
   @override
   State<Archived> createState() => _ArchivedState();
@@ -20,11 +22,30 @@ class _ArchivedState extends State<Archived> {
         itemBuilder: (context, index) {
           return Card(
             margin: const EdgeInsets.all(15),
-            child: ListTile(
-              leading: const CircleAvatar(
-                backgroundColor: Colors.grey,
+            child: Dismissible(
+              background: const BackgroundForDis(
+                color: Colors.green,
+                icon: Icons.undo_outlined,
+                isLeft: true,
               ),
-              title: Text(widget.archived[index]),
+              secondaryBackground: const BackgroundForDis(
+                  color: Colors.green, icon: Icons.undo_outlined),
+              direction: DismissDirection.horizontal,
+              onDismissed: (direction) {
+                final String undoArchivedString = widget.archived[index];
+                setState(() {
+                  widget.emails.insert(index, undoArchivedString);
+                  widget.archived.remove(undoArchivedString);
+                });
+                Navigator.pop(context, true);
+              },
+              key: Key(widget.emails[index]),
+              child: ListTile(
+                leading: const CircleAvatar(
+                  backgroundColor: Colors.grey,
+                ),
+                title: Text(widget.archived[index]),
+              ),
             ),
           );
         },
