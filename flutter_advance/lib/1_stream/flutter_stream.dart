@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/utils/code_display.dart';
+import 'package:flutter_advance/utils/codes/my_codes.dart';
 
 class FlutterStream extends StatefulWidget {
   const FlutterStream({super.key});
@@ -19,64 +21,76 @@ class _FlutterStreamState extends State<FlutterStream> {
         title: const Text("Single Stream"),
         centerTitle: true,
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            /**
+            //code
+            Container(
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(30),
+              color: Colors.white10,
+              child: Column(
+                children: [
+                  /**
              * showing real time text 
              * using streamBuilder 
              */
-            StreamBuilder<String>(
-              // stream =>*output
-              // sink =>*input
-              stream: streamController.stream,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Text(snapshot.data ?? "Null Data");
-                } else {
-                  return const Text("no data");
-                }
-              },
-            ),
-            SizedBox(
-              width: 80,
-              child: TextField(
-                controller: textEditingController,
-                onChanged: (value) {
-                  setState(() {
-                    texting = value;
-                  });
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                streamController.add(textEditingController.text);
-              },
-              child: const Text("Done"),
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            /*
+                  StreamBuilder<String>(
+                    // stream =>*output
+                    // sink =>*input
+                    stream: streamController.stream,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(snapshot.data ?? "Null Data");
+                      } else {
+                        return const Text("no data");
+                      }
+                    },
+                  ),
+                  SizedBox(
+                    width: 80,
+                    child: TextField(
+                      controller: textEditingController,
+                      onChanged: (value) {
+                        setState(() {
+                          texting = value;
+                        });
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      streamController.add(textEditingController.text);
+                    },
+                    child: const Text("Done"),
+                  ),
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  /*
             without using stream we 
             just use onChanged() in
             textfeild with setState()
              */
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: Colors.white10,
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      color: Colors.white10,
+                    ),
+                    child: texting.isNotEmpty
+                        ? Text("You Entered: $texting")
+                        : const Text("Please enter text in textfeild"),
+                  ),
+                ],
               ),
-              child: texting.isNotEmpty
-                  ? Text("You Entered: $texting")
-                  : const Text("Please enter text in textfeild"),
             ),
+            //code
+            CodeDisplay(text: MyCodes().stream1),
           ],
         ),
       ),

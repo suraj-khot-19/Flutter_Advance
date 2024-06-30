@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advance/model/widgets.dart';
+import 'package:flutter_advance/utils/widget_model.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
                       ),
                       const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Suraj khot",
@@ -51,7 +52,7 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
                           Text(
-                            "Love Flutte",
+                            "Love Flutter",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           )

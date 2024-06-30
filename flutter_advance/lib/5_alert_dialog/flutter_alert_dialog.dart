@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advance/home.dart';
+import 'package:flutter_advance/utils/code_display.dart';
+import 'package:flutter_advance/utils/codes/my_codes.dart';
 
 class FlutterAlertDialog extends StatelessWidget {
   const FlutterAlertDialog({super.key});
@@ -46,10 +48,20 @@ class FlutterAlertDialog extends StatelessWidget {
         title: const Text("Alert Dialog"),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => showing(),
-          child: const Text("Tap"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(100),
+              color: Colors.white10,
+              child: ElevatedButton(
+                onPressed: () => showing(),
+                child: const Text("Tap"),
+              ),
+            ),
+            CodeDisplay(text: MyCodes().alertdialog),
+          ],
         ),
       ),
     );
