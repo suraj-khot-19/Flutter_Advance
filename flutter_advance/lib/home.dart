@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.zero),
                       child: ListTile(
                         leading: Text(
-                          index.toString(),
+                          "${index + 1}",
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
