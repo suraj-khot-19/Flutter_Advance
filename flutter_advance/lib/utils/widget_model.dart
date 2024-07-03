@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
+import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -36,6 +37,7 @@ class WidgetsData {
         name: "Drop Down Menue Buttom"),
     Widgets(widget: const StackVisaCard(), name: "Stack(Visa Card)"),
     Widgets(widget: const FlutterTabBar(), name: "Tab Bar"),
+    Widgets(widget: const FlutterImagePicker(), name: "Image Picker"),
   ];
   //getter
   List<Widgets> get widgets => _widget;

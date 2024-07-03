@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   animated_text_kit:
   flutter_highlight:
+  image_picker:
+  carousel_slider:
 
 dev_dependencies:
   flutter_test:
