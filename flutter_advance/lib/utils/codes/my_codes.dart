@@ -1077,4 +1077,106 @@ If all three are null, the [Stack.alignment] is used to position the child horiz
   }
 }
 ''';
+  String tab = '''
+import 'package:flutter/material.dart';
+
+class FlutterTabBar extends StatelessWidget {
+  const FlutterTabBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 4,
+      initialIndex: 0,
+      animationDuration: const Duration(milliseconds: 500),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Tab Bar"),
+          backgroundColor: Colors.black26,
+          elevation: 0,
+          //tabs==>
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.home_max_outlined),
+                text: "Chat",
+              ),
+              Tab(
+                icon: Icon(Icons.punch_clock_rounded),
+                text: "Status",
+              ),
+              Tab(
+                icon: Icon(Icons.call_outlined),
+                text: "Calls",
+              ),
+              Tab(
+                icon: Icon(Icons.settings_outlined),
+                text: "Settings",
+              )
+            ],
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
+          child: TabBarView(
+            children: [
+              //0
+              Column(
+                children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const Text("Chats");
+                    },
+                  )
+                ],
+              ),
+
+              //1
+              Column(
+                children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const Text("status");
+                    },
+                  )
+                ],
+              ),
+              
+              //2
+              Column(
+                children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const Text("calls");
+                    },
+                  )
+                ],
+              ),
+
+              ///3
+              Column(
+                children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const Text("Settings");
+                    },
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+''';
 }

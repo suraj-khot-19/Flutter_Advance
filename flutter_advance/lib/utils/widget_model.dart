@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
+import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -30,10 +31,11 @@ class WidgetsData {
     Widgets(widget: const FlutterBottomSheet(), name: "Bottom Sheet"),
     Widgets(widget: const FlutterAnimatedText(), name: "Animated Text"),
     Widgets(widget: const FlutterBottomNavigation(), name: "Bottom Navigation"),
-    Widgets(widget: const StackVisaCard(), name: "Stack(Visa Card)"),
     Widgets(
         widget: const FlutterDropDownMenueButton(),
-        name: "Drop Down Menuw Buttom"),
+        name: "Drop Down Menue Buttom"),
+    Widgets(widget: const StackVisaCard(), name: "Stack(Visa Card)"),
+    Widgets(widget: const FlutterTabBar(), name: "Tab Bar"),
   ];
   //getter
   List<Widgets> get widgets => _widget;
