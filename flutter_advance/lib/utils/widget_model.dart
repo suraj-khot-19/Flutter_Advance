@@ -3,6 +3,7 @@ import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
 import 'package:flutter_advance/13_carousel_slider/flutter_carusal_slider.dart';
+import 'package:flutter_advance/14_form/flutter_forms.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -40,6 +41,7 @@ class WidgetsData {
     Widgets(widget: const FlutterTabBar(), name: "Tab Bar"),
     Widgets(widget: const FlutterImagePicker(), name: "Image Picker"),
     Widgets(widget: const FlutterCarusalSlider(), name: "Carousel Slider"),
+    Widgets(widget: const FlutterForms(), name: "Flutter Forms"),
   ];
   //getter
   List<Widgets> get widgets => _widget;
