@@ -1844,4 +1844,58 @@ class _FlutterAnimatedBuilderState extends State<FlutterAnimatedBuilder>
   }
 }
 ''';
+  String animatedContainer = '''
+import 'package:flutter/material.dart';
+
+class FlutterAnimatedContainer extends StatefulWidget {
+  const FlutterAnimatedContainer({super.key});
+
+  @override
+  State<FlutterAnimatedContainer> createState() =>
+      _FlutterAnimatedContainerState();
+}
+
+class _FlutterAnimatedContainerState extends State<FlutterAnimatedContainer> {
+  bool selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Container"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                selected = !selected;
+              });
+            },
+            // Creates a container that animates its parameters implicitly
+            child: Center(
+              child: AnimatedContainer(
+                height: selected ? 100 : 300,
+                width: selected ? 100 : 300,
+                duration: const Duration(seconds: 3),
+                alignment: selected ? Alignment.center : Alignment.topCenter,
+                color: selected ? Colors.blue : Colors.green,
+                curve: Easing.legacy,
+                child: Center(
+                  child: Text(
+                    selected.toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+''';
 }

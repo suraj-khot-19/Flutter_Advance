@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advance/0_Animations/flutter_animated_builder.dart';
+import 'package:flutter_advance/0_Animations/flutter_animated_container.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -48,6 +49,8 @@ class WidgetsData {
     Widgets(widget: const FlutterCarusalSlider(), name: "Carousel Slider"),
     Widgets(widget: const FlutterForms(), name: "Flutter Forms"),
     Widgets(widget: const FlutterAnimatedBuilder(), name: "Animated Builder"),
+    Widgets(
+        widget: const FlutterAnimatedContainer(), name: "Animated Container"),
   ];
   //getter
   List<Widgets> get widgets => _widget;
