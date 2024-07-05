@@ -1898,4 +1898,135 @@ class _FlutterAnimatedContainerState extends State<FlutterAnimatedContainer> {
   }
 }
 ''';
+  String animatedCrossFade = '''
+import 'package:flutter/material.dart';
+
+class Flutter03AnimatedCrossFade extends StatefulWidget {
+  const Flutter03AnimatedCrossFade({super.key});
+
+  @override
+  State<Flutter03AnimatedCrossFade> createState() =>
+      _Flutter03AnimatedCrossFadeState();
+}
+
+class _Flutter03AnimatedCrossFadeState
+    extends State<Flutter03AnimatedCrossFade> {
+  bool isSwitch = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Cross Fade"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            /*
+             * Creates a cross-fade animation widget.
+              The [duration] of the animation is the same for all components (fade in, fade out, and size), 
+              and you can pass [Interval]s instead of [Curve]s in order to have finer control, e.g., 
+              creating an overlap between the fades.
+             */
+            AnimatedCrossFade(
+              firstChild: Image.asset(
+                "assets/ram.jpg",
+                height: 150,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+              secondChild: Image.asset(
+                "assets/balaji.png",
+                height: 150,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+              crossFadeState:
+                  //using button
+                  isSwitch
+                      ? CrossFadeState.showFirst
+                      : CrossFadeState.showSecond,
+              duration: const Duration(seconds: 2),
+              //The fade curve of the first child.Defaults to [Curves.linear].
+              firstCurve: Curves.easeInOutCirc,
+              //The fade curve of the second child.Defaults to [Curves.linear].
+              secondCurve: Curves.easeInOutCubic,
+              //The curve of the animation between the two children's sizes.Defaults to [Curves.linear].
+              sizeCurve: Curves.bounceInOut,
+            ),
+            //button
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  isSwitch = !isSwitch;
+                });
+              },
+              child: const Text("Switch"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+''';
+  String animatedDefaultTextStyle = '''
+import 'package:flutter/material.dart';
+
+class Flutter04AnimatedDefaultTextStyle extends StatefulWidget {
+  const Flutter04AnimatedDefaultTextStyle({super.key});
+
+  @override
+  State<Flutter04AnimatedDefaultTextStyle> createState() =>
+      _Flutter04AnimatedDefaultTextStyleState();
+}
+
+class _Flutter04AnimatedDefaultTextStyleState
+    extends State<Flutter04AnimatedDefaultTextStyle> {
+  bool change = false;
+  double fontsize = 16;
+  Color color = Colors.tealAccent;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Default Text style"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 60,
+              //Creates a widget that animates the default text style implicitly.
+              child: AnimatedDefaultTextStyle(
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: fontsize,
+                  color: color,
+                ),
+                duration: const Duration(seconds: 2),
+                curve: Curves.easeInOutExpo,
+                child: const Text("Jay shree Ram"),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                //using advantage of it using set state
+                setState(() {
+                  change ? fontsize = 30 : fontsize = 16;
+                  change
+                      ? color = const Color.fromARGB(255, 173, 89, 5)
+                      : color = Colors.tealAccent;
+
+                  change = !change;
+                });
+              },
+              child: const Text("Change"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+''';
 }
