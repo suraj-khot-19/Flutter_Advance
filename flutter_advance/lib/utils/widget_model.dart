@@ -3,6 +3,7 @@ import 'package:flutter_advance/0_Animations/flutter_01_animated_builder.dart';
 import 'package:flutter_advance/0_Animations/flutter_02_animated_container.dart';
 import 'package:flutter_advance/0_Animations/flutter_03_animated_cross_fade.dart';
 import 'package:flutter_advance/0_Animations/flutter_04_animated_default_text_style.dart';
+import 'package:flutter_advance/0_Animations/flutter_05_animated_icon.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -59,6 +60,7 @@ class WidgetsData {
     Widgets(
         widget: const Flutter04AnimatedDefaultTextStyle(),
         name: "Animated Default Text Style"),
+    Widgets(widget: const Flutter05AnimatedIcon(), name: "Animated Icon"),
   ];
   //getter
   List<Widgets> get widgets => _widget;
