@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/0_Animations/flutter_animated_builder.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
 import 'package:flutter_advance/13_carousel_slider/flutter_carusal_slider.dart';
 import 'package:flutter_advance/14_form/flutter_forms.dart';
+import 'package:flutter_advance/15_about_dialog/flutter_about_dialog.dart';
+import 'package:flutter_advance/16_abosorb_pointer/absorb_pointer.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -31,6 +34,8 @@ class WidgetsData {
     Widgets(widget: const FlutterMultiStream(), name: "Multi Stream"),
     Widgets(widget: const FlutterDismissble(), name: "Dismissible"),
     Widgets(widget: const FlutterAlertDialog(), name: "Alert Dialog"),
+    Widgets(widget: const FlutterAboutDialog(), name: "About Dialog"),
+    Widgets(widget: const FlutterAbsorbPointer(), name: "Absorb Pointer"),
     Widgets(widget: const FlutterBottomSheet(), name: "Bottom Sheet"),
     Widgets(widget: const FlutterAnimatedText(), name: "Animated Text"),
     Widgets(widget: const FlutterBottomNavigation(), name: "Bottom Navigation"),
@@ -42,6 +47,7 @@ class WidgetsData {
     Widgets(widget: const FlutterImagePicker(), name: "Image Picker"),
     Widgets(widget: const FlutterCarusalSlider(), name: "Carousel Slider"),
     Widgets(widget: const FlutterForms(), name: "Flutter Forms"),
+    Widgets(widget: const FlutterAnimatedBuilder(), name: "Animated Builder"),
   ];
   //getter
   List<Widgets> get widgets => _widget;

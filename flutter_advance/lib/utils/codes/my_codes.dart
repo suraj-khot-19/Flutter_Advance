@@ -1654,4 +1654,194 @@ This method should only be called by the object's owner.
   }
 }
 ''';
+  String aboutDialog = '''
+import 'package:flutter/material.dart';
+
+class FlutterAboutDialog extends StatelessWidget {
+  const FlutterAboutDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("About Dialog"),
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const AboutDialog(
+                      //The name of the application.Defaults to the value of [Title.title], if a [Title] widget can be found. Otherwise, defaults to [Platform.resolvedExecutable].
+                      applicationName: "application Name",
+                      applicationIcon: FlutterLogo(),
+                      //A string to show in small print.Typically this is a copyright notice.Defaults to the empty string.
+                      applicationLegalese: "application Legalese",
+                      //The version of this build of the application.This string is shown under the application name.Defaults to the empty string.
+                      applicationVersion: "application Version",
+                    );
+                  },
+                );
+              },
+              child: const Text(
+                "about dialog",
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+''';
+  String absorbPointer = '''
+import 'package:flutter/material.dart';
+
+class FlutterAbsorbPointer extends StatelessWidget {
+  const FlutterAbsorbPointer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Absorb Pointer"),
+      ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            height: 200,
+            width: 100,
+            child: ElevatedButton(
+              // clikable
+              onPressed: () {},
+              child: null,
+            ),
+          ),
+          SizedBox(
+            height: 100,
+            width: 200,
+            //creates a widget that absorbs pointers during hit testing.
+            child: AbsorbPointer(
+              //not clickable
+              child: ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(backgroundColor: Colors.white30),
+                onPressed: () {},
+                child: null,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+''';
+  String animatedBuilder = '''
+import 'package:flutter/material.dart';
+/*
+impoting math
+*/
+import 'dart:math' as math;
+
+class FlutterAnimatedBuilder extends StatefulWidget {
+  const FlutterAnimatedBuilder({super.key});
+
+  @override
+  State<FlutterAnimatedBuilder> createState() => _FlutterAnimatedBuilderState();
+}
+
+//extends **TickerProviderStateMixin**
+/*
+Provides [Ticker] objects that are configured to only tick while the current tree is enabled, as defined by [TickerMode].To create an [AnimationController] in a class that uses this mixin, pass vsync: this to the animation controller constructor whenever you create a new animation controller.If you only have a single [Ticker] (for example only a single [AnimationController]) for the lifetime of your [State], then using a [SingleTickerProviderStateMixin] is more efficient. 
+ */
+class _FlutterAnimatedBuilderState extends State<FlutterAnimatedBuilder>
+    with TickerProviderStateMixin {
+  //creating controller
+  late AnimationController animationController = AnimationController(
+      vsync: this, duration: const Duration(seconds: 10))
+    ..repeat(); //Starts running this animation in the forward direction, and restarts the animation when it completes.
+  //must be dispose
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Animated Builder",
+        ),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            const Text("rotate"),
+            AnimatedBuilder(
+              animation: animationController,
+              child: const FlutterLogo(
+                size: 60,
+              ),
+              builder: (context, child) {
+                return Transform.rotate(
+                  angle: animationController.value * 3.0 * math.pi,
+                  child: child,
+                );
+              },
+            ),
+            const Text("Flip"),
+            AnimatedBuilder(
+              animation: animationController,
+              child: const FlutterLogo(
+                size: 60,
+              ),
+              builder: (context, child) {
+                return Transform.flip(
+                  flipX: true,
+                  // flipY: true,
+                  child: child,
+                );
+              },
+            ),
+            const Text("Scale"),
+            AnimatedBuilder(
+              animation: animationController,
+              child: const FlutterLogo(
+                size: 60,
+              ),
+              builder: (context, child) {
+                return Transform.scale(
+                  scaleX: 3,
+                  // scaleY: 3,
+                  child: child,
+                );
+              },
+            ),
+            const Text("Offset"),
+            AnimatedBuilder(
+              animation: animationController,
+              child: const FlutterLogo(
+                size: 60,
+              ),
+              builder: (context, child) {
+                return Transform.translate(
+                  offset: const Offset(30.30, 15.0),
+                  child: child,
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+''';
 }
