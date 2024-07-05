@@ -79,6 +79,7 @@ class _Flutter05AnimatedIconState extends State<Flutter05AnimatedIcon>
                   child: Column(
                     children: [
                       AnimatedIcon(
+                        //initalizing controller
                         progress: animationController,
                         //icon is animated icon
                         icon: AnimatedIcons.close_menu,
