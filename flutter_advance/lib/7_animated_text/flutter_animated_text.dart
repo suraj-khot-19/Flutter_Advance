@@ -109,7 +109,7 @@ class FlutterAnimatedText extends StatelessWidget {
                 ),
               ),
             ),
-            CodeDisplay(text: MyCodes().animatedList),
+            CodeDisplay(text: MyCodes().animatedText),
           ],
         ),
       ),
