@@ -14,6 +14,7 @@ import 'package:flutter_advance/13_carousel_slider/flutter_carusal_slider.dart';
 import 'package:flutter_advance/14_form/flutter_forms.dart';
 import 'package:flutter_advance/15_about_dialog/flutter_about_dialog.dart';
 import 'package:flutter_advance/16_abosorb_pointer/absorb_pointer.dart';
+import 'package:flutter_advance/17_speed_dial/flutter_speed_dial_widget.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -70,6 +71,8 @@ class WidgetsData {
     Widgets(
         widget: const Flutter08PracticeAnimatedList(),
         name: "Animated List(Automatic using Timer)"),
+    Widgets(
+        widget: const FlutterSpeedDialWidget(), name: "Fluttter Speed Dial)"),
   ];
   //getter
   List<Widgets> get widgets => _widget;

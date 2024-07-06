@@ -39,6 +39,7 @@ dependencies:
   flutter_highlight:
   image_picker:
   carousel_slider:
+  flutter_speed_dial: ^7.0.0
 
 dev_dependencies:
   flutter_test:
