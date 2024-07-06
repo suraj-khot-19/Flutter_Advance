@@ -7,6 +7,7 @@ import 'package:flutter_advance/0_Animations/flutter_05_animated_icon.dart';
 import 'package:flutter_advance/0_Animations/flutter_06_animated_align_widget.dart';
 import 'package:flutter_advance/0_Animations/flutter_07_animated_list.dart';
 import 'package:flutter_advance/0_Animations/flutter_08_practice_animated_list.dart';
+import 'package:flutter_advance/0_Animations/flutter_09_animated_model_barrier.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -72,7 +73,10 @@ class WidgetsData {
         widget: const Flutter08PracticeAnimatedList(),
         name: "Animated List(Automatic using Timer)"),
     Widgets(
-        widget: const FlutterSpeedDialWidget(), name: "Fluttter Speed Dial)"),
+        widget: const Flutter09AnimatedModelBarrier(),
+        name: "Animated Model Barrier"),
+    Widgets(
+        widget: const FlutterSpeedDialWidget(), name: "Fluttter Speed Dial"),
   ];
   //getter
   List<Widgets> get widgets => _widget;
