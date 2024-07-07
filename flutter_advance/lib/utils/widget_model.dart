@@ -16,6 +16,7 @@ import 'package:flutter_advance/14_form/flutter_forms.dart';
 import 'package:flutter_advance/15_about_dialog/flutter_about_dialog.dart';
 import 'package:flutter_advance/16_abosorb_pointer/absorb_pointer.dart';
 import 'package:flutter_advance/17_speed_dial/flutter_speed_dial_widget.dart';
+import 'package:flutter_advance/18_dark_light_theme_provider/dark_light_theme_provider.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -77,6 +78,9 @@ class WidgetsData {
         name: "Animated Model Barrier"),
     Widgets(
         widget: const FlutterSpeedDialWidget(), name: "Fluttter Speed Dial"),
+    Widgets(
+        widget: const DarkLightThemeProvider(),
+        name: "Theme changer using provider"),
   ];
   //getter
   List<Widgets> get widgets => _widget;

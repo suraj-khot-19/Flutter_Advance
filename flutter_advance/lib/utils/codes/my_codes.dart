@@ -2615,4 +2615,118 @@ black transparent and thus will fade out of or into black which is likely unwant
 }
 
 ''';
+  String theme1 = '''
+import 'package:flutter/material.dart';
+
+ThemeData lightTheme = ThemeData(
+    colorScheme: const ColorScheme.light(
+  primary: Colors.white70,
+  secondary: Colors.white12,
+  tertiary: Colors.black54,
+  surface: Colors.white70,
+  inversePrimary: Colors.black,
+),);
+
+''';
+  String theme2 = '''
+import 'package:flutter/material.dart';
+
+ThemeData darkTheme = ThemeData(
+    colorScheme: const ColorScheme.dark(
+  primary: Colors.black38,
+  secondary: Colors.black54,
+  inversePrimary: Colors.white,
+  surface: Colors.white12,
+));
+
+''';
+  String theme4 = '''
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_advance/18_dark_light_theme_provider/theme_provider.dart';
+import 'package:provider/provider.dart';
+
+class DarkLightThemeProvider extends StatefulWidget {
+  const DarkLightThemeProvider({super.key});
+
+  @override
+  State<DarkLightThemeProvider> createState() => _DarkLightThemeProviderState();
+}
+
+class _DarkLightThemeProviderState extends State<DarkLightThemeProvider> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(
+        title: const Text("Provider"),
+        backgroundColor: Colors.transparent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              const SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    Provider.of<ThemeProvider>(context, listen: false).isLight == true
+                  ? "Light Theme"
+                  : "dark theme",
+                  ),
+                  CupertinoSwitch(
+                    value: Provider.of<ThemeProvider>(context, listen: false).isLight,
+                    onChanged: (value) {
+                      Provider.of<ThemeProvider>(context, listen: false).togleTheme();
+                    },
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+''';
+  String theme3 = '''
+import 'package:flutter/material.dart';
+import 'package:flutter_advance/18_dark_light_theme_provider/theme_provider.dart';
+import 'package:flutter_advance/home.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      home: const Home(),
+    );
+  }
+}
+''';
 }
