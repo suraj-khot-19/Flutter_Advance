@@ -8,6 +8,7 @@ import 'package:flutter_advance/0_Animations/flutter_06_animated_align_widget.da
 import 'package:flutter_advance/0_Animations/flutter_07_animated_list.dart';
 import 'package:flutter_advance/0_Animations/flutter_08_practice_animated_list.dart';
 import 'package:flutter_advance/0_Animations/flutter_09_animated_model_barrier.dart';
+import 'package:flutter_advance/0_Animations/flutter_10_animated_opacity.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -76,6 +77,7 @@ class WidgetsData {
     Widgets(
         widget: const Flutter09AnimatedModelBarrier(),
         name: "Animated Model Barrier"),
+    Widgets(widget: const Flutter10AnimatedOpacity(), name: "Animated Opacity"),
     Widgets(
         widget: const FlutterSpeedDialWidget(), name: "Fluttter Speed Dial"),
     Widgets(
