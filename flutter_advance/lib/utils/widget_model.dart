@@ -11,6 +11,7 @@ import 'package:flutter_advance/0_Animations/flutter_09_animated_model_barrier.d
 import 'package:flutter_advance/0_Animations/flutter_10_animated_opacity.dart';
 import 'package:flutter_advance/0_Animations/flutter_11_animated_padding.dart';
 import 'package:flutter_advance/0_Animations/flutter_12_animated_physical_model.dart';
+import 'package:flutter_advance/0_Animations/flutter_13_animated_positional.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -81,6 +82,9 @@ class WidgetsData {
         name: "Animated Model Barrier"),
     Widgets(widget: const Flutter10AnimatedOpacity(), name: "Animated Opacity"),
     Widgets(widget: const Flutter11AnimatedPadding(), name: "Animated Padding"),
+    Widgets(
+        widget: const Flutter13AnimatedPositional(),
+        name: "Animated Positional"),
     Widgets(
         widget: const Flutter12AnimatedPhysicalModel(),
         name: "Animated physical model"),

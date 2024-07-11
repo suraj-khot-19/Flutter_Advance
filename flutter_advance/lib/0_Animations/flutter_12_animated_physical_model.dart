@@ -24,8 +24,8 @@ class _Flutter12AnimatedPhysicalModelState
           children: [
             Center(
               child: Container(
-                margin: EdgeInsets.all(20),
-                padding: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     /*
