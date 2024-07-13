@@ -12,6 +12,7 @@ import 'package:flutter_advance/0_Animations/flutter_10_animated_opacity.dart';
 import 'package:flutter_advance/0_Animations/flutter_11_animated_padding.dart';
 import 'package:flutter_advance/0_Animations/flutter_12_animated_physical_model.dart';
 import 'package:flutter_advance/0_Animations/flutter_13_animated_positional.dart';
+import 'package:flutter_advance/0_Animations/flutter_14_animation_rotation.dart';
 import 'package:flutter_advance/10_stack_visa_card/stack_visa_card.dart';
 import 'package:flutter_advance/11_tab_bar/flutter_tab_bar.dart';
 import 'package:flutter_advance/12_image_picker/flutter_image_picker.dart';
@@ -21,6 +22,7 @@ import 'package:flutter_advance/15_about_dialog/flutter_about_dialog.dart';
 import 'package:flutter_advance/16_abosorb_pointer/absorb_pointer.dart';
 import 'package:flutter_advance/17_speed_dial/flutter_speed_dial_widget.dart';
 import 'package:flutter_advance/18_dark_light_theme_provider/dark_light_theme_provider.dart';
+import 'package:flutter_advance/19_custom_paint_clock/flutter_custom_paint_clock.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
@@ -83,6 +85,8 @@ class WidgetsData {
     Widgets(widget: const Flutter10AnimatedOpacity(), name: "Animated Opacity"),
     Widgets(widget: const Flutter11AnimatedPadding(), name: "Animated Padding"),
     Widgets(
+        widget: const Flutter14AnimationRotation(), name: "Animated Rotation"),
+    Widgets(
         widget: const Flutter13AnimatedPositional(),
         name: "Animated Positional"),
     Widgets(
@@ -93,6 +97,9 @@ class WidgetsData {
     Widgets(
         widget: const DarkLightThemeProvider(),
         name: "Theme changer using provider"),
+    Widgets(
+        widget: const FlutterCustomPaintClock(),
+        name: "Custom paint \"Clock\""),
   ];
   //getter
   List<Widgets> get widgets => _widget;
