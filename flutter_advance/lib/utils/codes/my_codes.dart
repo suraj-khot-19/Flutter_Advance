@@ -3073,4 +3073,46 @@ class _Flutter14AnimationRotationState
   }
 }
 ''';
+  String animatedSize = '''
+import 'package:flutter/material.dart';
+
+class Flutter15AnimatedSize extends StatefulWidget {
+  const Flutter15AnimatedSize({super.key});
+
+  @override
+  State<Flutter15AnimatedSize> createState() => _Flutter15AnimatedSizeState();
+}
+
+class _Flutter15AnimatedSizeState extends State<Flutter15AnimatedSize> {
+  double size = 200;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Animated Size"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  size = size == 200 ? size = 100 : size = 200;
+                });
+              },
+              child: AnimatedSize(
+                duration: const Duration(seconds: 1),
+                curve: Curves.easeInExpo,
+                child: FlutterLogo(
+                  size: size,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+''';
 }
