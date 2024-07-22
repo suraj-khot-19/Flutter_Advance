@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/utils/code_display.dart';
+import 'package:flutter_advance/utils/codes/my_codes.dart';
 import 'package:flutter_advance/utils/widget_model.dart';
 
 class Home extends StatefulWidget {
@@ -14,10 +16,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter practice"),
+        title: const Text("Drawer in flutter"),
       ),
-      body: const Center(
-        child: Text("Love Flutter"),
+      body: SingleChildScrollView(
+        child: CodeDisplay(text: MyCodes().home),
       ),
       drawer: Drawer(
         backgroundColor: Theme.of(context).colorScheme.secondary,

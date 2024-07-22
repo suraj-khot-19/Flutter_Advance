@@ -26,6 +26,7 @@ import 'package:flutter_advance/17_speed_dial/flutter_speed_dial_widget.dart';
 import 'package:flutter_advance/18_dark_light_theme_provider/dark_light_theme_provider.dart';
 import 'package:flutter_advance/19_custom_paint_clock/flutter_custom_paint_clock.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
+import 'package:flutter_advance/20_auto_complete/flutter_auto_complete.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
 import 'package:flutter_advance/5_alert_dialog/flutter_alert_dialog.dart';
@@ -102,6 +103,9 @@ class WidgetsData {
     Widgets(
         widget: const DarkLightThemeProvider(),
         name: "Theme changer using provider"),
+    Widgets(
+        widget: const FlutterAutoComplete(),
+        name: "Auto Complete(while search)"),
     Widgets(
         widget: const FlutterCustomPaintClock(),
         name: "Custom paint \"Clock\""),
