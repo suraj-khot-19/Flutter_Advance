@@ -43,7 +43,7 @@ class FlutterAutoComplete extends StatelessWidget {
                 initialValue: TextEditingValue(text: list[0]),
               ),
             ),
-            CodeDisplay(text: MyCodes().autoComplete)
+            CodeDisplay(text: MyCodes().autoComplete),
           ],
         ),
       ),

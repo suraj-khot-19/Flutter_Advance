@@ -26,7 +26,9 @@ import 'package:flutter_advance/17_speed_dial/flutter_speed_dial_widget.dart';
 import 'package:flutter_advance/18_dark_light_theme_provider/dark_light_theme_provider.dart';
 import 'package:flutter_advance/19_custom_paint_clock/flutter_custom_paint_clock.dart';
 import 'package:flutter_advance/1_stream/flutter_stream.dart';
-import 'package:flutter_advance/20_auto_complete/flutter_auto_complete.dart';
+import 'package:flutter_advance/20_Auto_Complete/flutter_auto_complete.dart';
+import 'package:flutter_advance/21_Image_Icon/flutter_image_icon.dart';
+import 'package:flutter_advance/22_baseline_widget/flutter_base_line_widget.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
 import 'package:flutter_advance/5_alert_dialog/flutter_alert_dialog.dart';
@@ -64,6 +66,7 @@ class WidgetsData {
     Widgets(widget: const StackVisaCard(), name: "Stack(Visa Card)"),
     Widgets(widget: const FlutterTabBar(), name: "Tab Bar"),
     Widgets(widget: const FlutterImagePicker(), name: "Image Picker"),
+    Widgets(widget: const FlutterImageIcon(), name: "Image Icon"),
     Widgets(widget: const FlutterCarusalSlider(), name: "Carousel Slider"),
     Widgets(widget: const FlutterForms(), name: "Flutter Forms"),
     Widgets(widget: const FlutterAnimatedBuilder(), name: "Animated Builder"),
@@ -106,6 +109,7 @@ class WidgetsData {
     Widgets(
         widget: const FlutterAutoComplete(),
         name: "Auto Complete(while search)"),
+    Widgets(widget: const FlutterBaseLineWidget(), name: "Base Line Widget"),
     Widgets(
         widget: const FlutterCustomPaintClock(),
         name: "Custom paint \"Clock\""),
