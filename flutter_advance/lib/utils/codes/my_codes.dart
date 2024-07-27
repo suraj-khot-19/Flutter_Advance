@@ -3328,4 +3328,41 @@ class FlutterAutoComplete extends StatelessWidget {
   }
 }
 ''';
+  String checkBox = '''
+import 'package:flutter/material.dart';
+
+class FlutterCheckBox extends StatefulWidget {
+  const FlutterCheckBox({super.key});
+
+  @override
+  State<FlutterCheckBox> createState() => _FlutterCheckBoxState();
+}
+
+class _FlutterCheckBoxState extends State<FlutterCheckBox> {
+  bool? isCheckedMale = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Check box"),
+      ),
+      body: Column(
+        children: [
+          Checkbox(
+            value: isCheckedMale,
+            activeColor: Colors.purple,
+            tristate:
+                true, //?If true the checkbox's [value] can be true, false, or null.
+            onChanged: (value) {
+              setState(() {
+                isCheckedMale = value;
+              });
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+''';
 }

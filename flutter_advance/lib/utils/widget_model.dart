@@ -29,6 +29,7 @@ import 'package:flutter_advance/1_stream/flutter_stream.dart';
 import 'package:flutter_advance/20_Auto_Complete/flutter_auto_complete.dart';
 import 'package:flutter_advance/21_Image_Icon/flutter_image_icon.dart';
 import 'package:flutter_advance/22_baseline_widget/flutter_base_line_widget.dart';
+import 'package:flutter_advance/23_check_box/flutter_check_box.dart';
 import 'package:flutter_advance/2_broadcasting_stream/flutter_multi_stream.dart';
 import 'package:flutter_advance/4_dismissible/flutter_dismissble.dart';
 import 'package:flutter_advance/5_alert_dialog/flutter_alert_dialog.dart';
@@ -110,6 +111,7 @@ class WidgetsData {
         widget: const FlutterAutoComplete(),
         name: "Auto Complete(while search)"),
     Widgets(widget: const FlutterBaseLineWidget(), name: "Base Line Widget"),
+    Widgets(widget: const FlutterCheckBox(), name: "Check Box"),
     Widgets(
         widget: const FlutterCustomPaintClock(),
         name: "Custom paint \"Clock\""),
